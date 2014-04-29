@@ -1,3 +1,129 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	background:#222;
+	color:#fff;
+	font-weight:100;
+}
+
 body {
-	padding-top:50px;
+	font-family: "brandon-grotesque",sans-serif;
+	font-weight:300;
+	background:#222 url(/static/img/bg-landscape.jpg) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.content {
+	position:relative;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.25);
+}
+
+p {
+	line-height:1.8em;
+}
+
+h1 {
+	font-family: "corner-store",sans-serif;
+	font-weight:normal;
+	margin:0;
+	padding:0.67em 0;
+}
+
+.centered {
+	max-width:600px;
+	margin:0 auto;
+	text-align:center;
+	padding:0 1em;
+}
+.bg-light {
+	background-color: #efefef;
+	color:#222;
+}
+
+.page-header {
+	text-align:center;
+	padding:0 1em;
+}
+.page-header h1 {
+	text-align:center;
+}
+.page-header .intro {
+	max-width:600px;
+	margin:0 auto;
+	text-align:center;
+}
+.page-body {
+
+}
+.checklists {
+	position:relative;
+	width:100%;
+	max-width:720px;
+	margin:0 auto;
+}
+.checklists:after {
+	content:'';
+  display:block;
+  clear: both;
+}
+.checklist {
+	position:relative;
+	float:left;
+	width:50%;
+	max-width:280px;
+	padding:0 1em 1em 1em;
+	margin:2em 1em 2em 2em;
+	text-align:left;
+	min-height:300px;
+	-moz-transform: rotate(4deg);
+	-o-transform: rotate(4deg);
+	-ms-transform: rotate(4deg);
+	-webkit-transform: rotate(4deg);
+	transform: rotate(4deg);
+	box-shadow:3px 3px 8px rgba(0,0,0,0.3);
+}
+
+.checklist:last-child {
+	float:right;
+	margin:2em 2em 2em 1em;
+	-moz-transform: rotate(-2deg);
+	-o-transform: rotate(-2deg);
+	-ms-transform: rotate(-2deg);
+	-webkit-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+}
+@media all and (max-width: 720px) {
+	.checklists {
+		padding-top:2em;
+	}
+  .checklist {
+  	padding-top:0.05em;
+  	float:none;
+		width:100%;
+		margin:0 auto;
+  }
+  .checklist:last-child {
+  	float:none;
+  	margin:3em auto 2em auto;
+  }
+}
+.checklist ul {
+	margin-top:0;
+}
+.checklist li + li {
+	margin-top:5px;
+}
+.checklist li .fa-li {
+	font-size: 1.5em;
+	line-height: 0.75em;
+	padding-left: 0.5em;
+	color:#999;
 }
