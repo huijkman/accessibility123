@@ -24,7 +24,7 @@ password = 'wachtwoord'
 jinja_environment = jinja2.Environment(autoescape=True,
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'views')))
 
-class MainPage(webapp2.RequestHandler):
+class HomePage(webapp2.RequestHandler):
     def get(self):
         template_values = {}
 
@@ -38,9 +38,17 @@ class SubPage(webapp2.RequestHandler):
         template = jinja_environment.get_template('subpage.html')
         self.response.out.write(template.render(template_values))
 
+class MainPage(webapp2.RequestHandler):
+    def get(self):
+        template_values = {}
+
+        template = jinja_environment.get_template('main.html')
+        self.response.out.write(template.render(template_values))
+
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
+    ('/home', HomePage),
     ('/sub', SubPage)
 ], debug=True)
 
